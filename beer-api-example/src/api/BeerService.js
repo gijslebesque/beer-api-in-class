@@ -16,6 +16,13 @@ export default class BeerService {
     const { data } = await this.service.get("beers");
     return data;
   };
+
+  getOneBeer = async id => {
+    debugger;
+    const { data } = await this.service.get(`beers/${id}`);
+    debugger;
+    return data;
+  };
 }
 
 // in the component where you use the service don't forget to create an instance of this class.

@@ -19,14 +19,13 @@ export default class AllBeers extends Component {
       const allBeers = await this.beerService.getAllBeers();
       this.setState({ allBeers, isLoading: false });
     } catch (err) {
-      debugger;
       console.log(err);
     }
   };
 
   renderBeers = () => {
-    return this.state.allBeers.map(oneBeer => {
-      return <Beer {...oneBeer} />;
+    return this.state.allBeers.map((oneBeer, i) => {
+      return <Beer key={i} {...oneBeer} />;
     });
   };
 

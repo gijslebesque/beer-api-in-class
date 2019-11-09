@@ -3,6 +3,7 @@ import "./App.css";
 import { Route, Switch, Link } from "react-router-dom";
 import AllBeers from "./pages/AllBeers";
 import Home from "./pages/Home/";
+import SingleBeer from "./pages/SingleBeer";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/all-beers" component={AllBeers} />
+        <Route exact path="/beer-detail/:id" component={SingleBeer} />
       </Switch>
     </div>
   );
