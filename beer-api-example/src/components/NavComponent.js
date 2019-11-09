@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export default function NavComponent({ link, header, className, body }) {
   return (
-    <div>
+    <div className="card">
       <div className={`nav-item ${className}`}></div>
       <Link to={link}>
         <h1> {header}</h1>
