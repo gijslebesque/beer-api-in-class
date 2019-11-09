@@ -5,6 +5,7 @@ import AllBeers from "./pages/AllBeers";
 import Home from "./pages/Home/";
 import SingleBeer from "./pages/SingleBeer";
 import NotFound from "./pages/NotFound";
+import AddBeer from "./pages/AddBeer";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           path={["/beer-detail/:id", "/random-beer"]}
           component={SingleBeer}
         />
+        <Route exact path="/add-beer" component={AddBeer} />
         <Route path="*" component={NotFound} />
       </Switch>
     </div>

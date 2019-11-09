@@ -27,6 +27,11 @@ export default class BeerService {
     const { data } = await this.service.get(`beers/random`);
     return data;
   };
+
+  addBeer = async payload => {
+    const { data } = await this.service.post("beers/new", payload);
+    return data;
+  };
 }
 
 // in the component where you use the service don't forget to create an instance of this class.
