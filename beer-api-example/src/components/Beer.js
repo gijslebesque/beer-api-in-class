@@ -5,14 +5,21 @@ export default function Beer({
   name,
   image_url,
   _id,
+  tagline,
+  first_brewed,
+  attenuation_level,
   description,
+  contributed_by,
   isDetailed
 }) {
   if (isDetailed) {
     return (
       <div>
-        <p>{name}</p>
+        <img src={image_url} alt="" />
+        <h1>{name}</h1>
+        <p>{tagline}</p>
         <p>{description}</p>
+        <p>By: {contributed_by}</p>
       </div>
     );
   }

@@ -18,5 +18,11 @@ export const config = [
     header: "New Beer",
     className: "newBeer",
     body: "Add a new beer!"
+  },
+  {
+    link: "good-beers",
+    header: "Nice good beers",
+    className: "newBeer",
+    body: "Some nice beers"
   }
 ];

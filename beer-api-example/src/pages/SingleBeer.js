@@ -24,6 +24,11 @@ export default class SingleBeer extends Component {
   };
 
   render() {
-    return <div> {<Beer {...this.state.beer} isDetailed />}</div>;
+    return (
+      <div>
+        <h1>One single Beer</h1>
+        {<Beer {...this.state.beer} isDetailed />}
+      </div>
+    );
   }
 }
