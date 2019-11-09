@@ -18,9 +18,13 @@ export default class BeerService {
   };
 
   getOneBeer = async id => {
-    debugger;
     const { data } = await this.service.get(`beers/${id}`);
+    return data;
+  };
+
+  getRandomBeer = async () => {
     debugger;
+    const { data } = await this.service.get(`beers/random`);
     return data;
   };
 }

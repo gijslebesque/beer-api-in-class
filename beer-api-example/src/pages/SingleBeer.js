@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import BeerService from "../api/BeerService";
-import { BeerDetail } from "../components/BeerDetail";
+import Beer from "../components/Beer";
 
 export default class SingleBeer extends Component {
   constructor() {
@@ -13,9 +13,10 @@ export default class SingleBeer extends Component {
 
   componentDidMount = async () => {
     const { id } = this.props.match.params;
-
+    let beer;
     try {
-      const beer = await this.beerService.getOneBeer(id);
+      if (id) beer = await this.beerService.getOneBeer(id);
+      else beer = await this.beerService.getRandomBeer();
       this.setState({ beer });
     } catch (err) {
       console.log(err);
@@ -23,6 +24,6 @@ export default class SingleBeer extends Component {
   };
 
   render() {
-    return <div>{this.state.beer && <BeerDetail {...this.state.beer} />}</div>;
+    return <div> {<Beer {...this.state.beer} isDetailed />}</div>;
   }
 }
