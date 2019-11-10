@@ -23,13 +23,12 @@ export default class BeerService {
   };
 
   getRandomBeer = async () => {
-    debugger;
     const { data } = await this.service.get(`beers/random`);
     return data;
   };
 
   addBeer = async payload => {
-    const { data } = await this.service.post("beers/new", payload);
+    const { data } = await this.service.post("beers/new", payload, {});
     return data;
   };
 }
